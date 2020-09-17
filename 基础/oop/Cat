@@ -1,0 +1,20 @@
+class Cat:
+  def __init__(self, new_name):
+    self.name = new_name
+  def eat(self):
+    print('%s 爱吃鱼' % self.name)
+  def drink(self):
+    print('%s 爱喝水' % self.name)
+  def __del__(self):
+    print('%s 吃完喝完该睡觉了' % self.name)
+  def __str__(self):
+    return 'I`m a cat'
+tom = Cat('Tom')
+# tom.name = 'Tom2'
+tom.drink()
+tom.eat()
+print(tom)
+lazy_cat = Cat('lazy_cat')
+# tom.name = 'Tom2'
+lazy_cat.drink()
+lazy_cat.eat()
