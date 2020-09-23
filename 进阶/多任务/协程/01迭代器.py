@@ -5,25 +5,18 @@ class Classmate(object):
 
     def __init__(self):
         self.names = list()
+        self.current_num = 0
 
     def add(self, name):
         self.names.append(name)
 
     def __iter__(self):
-        return ClassIterator(self)
-
-
-class ClassIterator(object):
-    def __init__(self, obj):
-        self.obj = obj
-        self.current_num = 0
-
-    def __iter__(self):
-        pass
+        """"如果想对一个对象可迭代，可以使用for，必须实现__iter__方法"""
+        return self
 
     def __next__(self):
-        if self.current_num < len(self.obj.names):
-            result = self.obj.names[self.current_num]
+        if self.current_num < len(self.names):
+            result = self.names[self.current_num]
             self.current_num += 1
             return result
         else:
